@@ -109,3 +109,13 @@ window.contactSupport = function() {
     const msg = encodeURIComponent("नमस्ते गौतम जी, मुझे अंकदृष्टि के बारे में जानकारी चाहिए।");
     window.open(`https://wa.me/91XXXXXXXXXX?text=${msg}`, '_blank'); // यहाँ अपना नंबर डालें
 };
+
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Ankdristi: Service Worker Registered'))
+      .catch(err => console.log('Service Worker Error', err));
+  });
+}
+
