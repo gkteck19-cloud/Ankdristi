@@ -109,20 +109,23 @@ button {
     cursor: pointer;
 }
 
-/* 5. लोशू ग्रिड डिज़ाइन */
+/* लोशू ग्रिड का मुख्य ढांचा */
 .loshu-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    background: #fbbf24;
+    grid-template-columns: repeat(3, 1fr); /* 3 कॉलम */
+    gap: 10px; /* डिब्बों के बीच की दूरी */
+    background: #fbbf24; /* बॉर्डर का सुनहरा रंग */
     padding: 10px;
     border-radius: 15px;
-    margin-top: 20px;
+    max-width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
 }
 
+/* हर एक बॉक्स (Cell) की स्टाइल */
 .cell {
-    background: #0f172a;
-    aspect-ratio: 1/1;
+    background: #0f172a; /* अंदर का गहरा नीला रंग */
+    aspect-ratio: 1/1; /* बॉक्स को चकोर रखने के लिए */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,7 +133,9 @@ button {
     font-weight: bold;
     color: #fbbf24;
     border-radius: 8px;
+    min-height: 80px; /* मोबाइल पर सही दिखने के लिए */
 }
+
 
 /* 6. फ्लोटिंग व्हाट्सएप विजेट */
 .floating-widget {
