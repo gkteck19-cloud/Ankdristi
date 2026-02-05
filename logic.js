@@ -81,14 +81,20 @@ function calculateReduction(numStr) {
 }
 
 function fillGrid(d, m, y, mul, bhag) {
+    // पहले पुराने नंबर मिटाएं
     for (let i = 1; i <= 9; i++) {
-        document.getElementById('c' + i).innerText = '';
+        const cell = document.getElementById('c' + i);
+        if (cell) cell.innerText = '';
     }
+
+    // जन्मतिथि और मूलांक-भाग्यांक के सभी अंकों को एक साथ जोड़ें
     const allDigits = (d + m + y + mul + bhag).split('');
+    
     allDigits.forEach(digit => {
         if (digit !== '0') {
             const cell = document.getElementById('c' + digit);
             if (cell) {
+                // अगर नंबर पहले से है, तो उसके आगे जोड़ें (जैसे 11)
                 cell.innerText += digit;
             }
         }
